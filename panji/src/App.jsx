@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/home";
 import Katalog from "./Pages/katalog";
 import Petunjuk from "./Pages/petunjuk";
+import Detail from "./Pages/detail";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/katalog" element={<Katalog />} />
           <Route path="/Petunjuk" element={<Petunjuk />} />
+          <Route path="/Detail" element={<Detail />} />
         </Routes>
       </Router>
     </>
