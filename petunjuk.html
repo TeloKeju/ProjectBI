@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body style="background-color: #6d85b3">
+    <header class="sticky-top fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-night">
+        <section class="container">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <img
+              src="https://buku.kemdikbud.go.id/assets/image/logo-sibi.png"
+              height="50"
+              alt="Logo"
+            />
+            <section class="navbar-dark" style="font-size: 0.95rem">
+              <section>Sistem Informasi</section>
+              <section class="fw-bold">Perbukuan Indonesia</section>
+            </section>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <section class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item mx-1">
+                <a href="#" class="nav-link fw-bold">Beranda</a>
+              </li>
+              <li class="nav-item dropdown mx-1">
+                <a
+                  href="#"
+                  class="nav-link dropdown-toggle dropdown-mobile"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Katalog Buku</a
+                >
+                <ul
+                  class="dropdown-menu px-2"
+                  aria-labelledby="dropdownCatalogue"
+                >
+                  <li>
+                    <a href="#" class="dropdown-item p-2">
+                      <img
+                        src="https://buku.kemdikbud.go.id/assets/image/home/Group%2079.png"
+                        width="30"
+                        alt=""
+                      />
+                      <span class="ms-2 my-auto"
+                        >Buku Teks Kurikulum Merdeka</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown-item p-2">
+                      <img
+                        src="https://buku.kemdikbud.go.id/assets/image/home/Group%2076.png"
+                        width="30"
+                        alt=""
+                      />
+                      <span class="ms-2 my-auto">Buku Teks K-13</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown-item p-2">
+                      <img
+                        src="https://buku.kemdikbud.go.id/assets/image/home/Group%2080.png"
+                        width="30"
+                        alt=""
+                      />
+                      <span class="ms-2 my-auto">Buku Nonteks</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown mx-1">
+                <a
+                  href="#"
+                  class="nav-link dropdown-toggle dropdown-mobile"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Petunjuk
+                </a>
+                <ul
+                  class="dropdown-menu px-2"
+                  aria-labelledby="dropdownCatalogue"
+                >
+                  <li>
+                    <a href="#" class="dropdown-item p-2">
+                      <img
+                        src="https://buku.kemdikbud.go.id/assets/image/home/Group%2020.png"
+                        width="30"
+                        alt=""
+                      />
+                      <span class="ms-2 my-auto">untuk Siswa</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown-item p-2">
+                      <img
+                        src="https://buku.kemdikbud.go.id/assets/image/home/Group%2021.png"
+                        width="30"
+                        alt=""
+                      />
+                      <span class="ms-2 my-auto">untuk Guru</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown-item p-2">
+                      <img
+                        src="https://buku.kemdikbud.go.id/assets/image/home/Group%2022.png"
+                        width="30"
+                        alt=""
+                      />
+                      <span class="ms-2 my-auto">untuk Orang Tua</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item mx-1">
+                <section class="nav-link" style="cursor: pointer">
+                  Profil
+                </section>
+              </li>
+              <li class="nav-item mx-1">
+                <a href="#" class="nav-link">
+                  Sastra Masuk Kurikulum
+                  <sup class="text-bg-danger">Baru</sup>
+                </a>
+              </li>
+            </ul>
+            <ul class="navbar-nav mb-2 mb-lg-0 text-center text-xl-start">
+              <li class="nav-item ms-3 pt-1">
+                <a href="#" class="btn btn-sm btn-outline-light">Masuk</a>
+              </li>
+            </ul>
+          </section>
+        </section>
+      </nav>
+    </header>
+
+    <main>
+      <section class="bg-hero position-relative hero-petunjuk">
+        <section class="container p-3 pb-0">
+          <section class="row">
+            <section class="col-lg-6 order-last order-md-first my-5 my-md-auto">
+              <!-- <p class="lead fw-bold"> -->
+              <section class="d-inline-flex flex-column">
+                <span class="fw-bold">BUKU UNTUK SISWA</span>
+                <span class="mtmin d-none d-md-block">
+                  <img
+                    src="https://buku.kemdikbud.go.id/assets/image/home/line-title.png"
+                    alt=""
+                  />
+                </span>
+              </section>
+              <!-- </p> -->
+              <section class="row">
+                <section class="col-10">
+                  <section class="text-hero-h1 fw-bold text-blue">
+                    Belajar jadi lebih mudah
+                  </section>
+                </section>
+              </section>
+              <p class="lead mt-2 mt-lg-2x">
+                Temukan buku pelajaran resmi kemendikbud di sini
+              </p>
+            </section>
+            <section class="col-lg-6 position-relative">
+              <img
+                src="https://buku.kemdikbud.go.id/assets/image/guide/untuk%20siswa.png"
+                class="w-100 d-block d-lg-none position-relative"
+                style="z-index: 1; right: -5%"
+                alt=""
+              />
+            </section>
+          </section>
+        </section>
+        <img
+          src="https://buku.kemdikbud.go.id/assets/image/guide/untuk%20siswa.png"
+          class="d-none w-50 d-lg-block position-absolute"
+          style="z-index: 1; left: 50%; bottom: 0%"
+          alt=""
+        />
+      </section>
+
+      <section class="py-5 bg-white">
+        <section class="container-fluid p-5">
+          <section class="row align-items-center">
+            <section class="col-lg-6 text-center mb-4">
+              <img
+                src="https://buku.kemdikbud.go.id/assets/image/guide/student/aset%20panduan%20siswa%20poin%201.png"
+                style="width: 60%"
+                alt=""
+              />
+            </section>
+            <section class="col-lg-6 ps-lg-5">
+              <h1 class="text-blue mb-3 fw-bold">
+                Akses gratis Buku
+                <br />
+                pelajaran resmi
+              </h1>
+              <p>
+                Dapatkan akses buku teks pelajaran dan buku referensi untuk
+                bahan belajar di sekolah dan di rumah langsung dari Pusat
+                Perbukuan, Kemdikbud.
+              </p>
+            </section>
+          </section>
+          <section class="row align-items-center mt-5">
+            <section
+              class="col-lg-6 ps-lg-5 order-last order-md-first mt-4 mt-md-0"
+            >
+              <h1 class="text-blue mb-3 fw-bold">
+                Keuntungan jika
+                <br />
+                daftar akun
+              </h1>
+              <p>
+                Dengan mendaftar dan login di laman SIBI, adik-adik dapat turut
+                serta melaporkan hal-hal yang terkait dengan buku seperti
+                keunggulan atau kelemahan buku yang adik-adik baca.
+              </p>
+              <p>
+                Dengan login pada platform laman SIBI, adik-adik dapat juga
+                melihat riwayat baca dan unduhan buku.
+              </p>
+              <p>
+                Di laman SIBI ini, adik-adik dapat ikut serta mengulas dan
+                memberikan komentar pada buku, juga melihat ulasan dari
+                teman-teman yang lainnya.
+              </p>
+            </section>
+            <section class="col-lg-6 text-center">
+              <img
+                src="https://buku.kemdikbud.go.id/assets/image/guide/student/aset%20panduan%20siswa%20poin%202.png"
+                class="w-75"
+                alt=""
+              />
+            </section>
+          </section>
+          <section class="row align-items-center mt-5">
+            <section class="col-lg-6 text-center mb-4">
+              <img
+                src="https://buku.kemdikbud.go.id/assets/image/guide/student/aset%20panduan%20siswa%20poin%203.png"
+                class="w-100"
+                alt=""
+              />
+            </section>
+            <section class="col-lg-6 ps-lg-5">
+              <h1 class="text-blue mb-3 fw-bold">
+                Beragam Buku
+                <br />
+                untuk dicoba
+              </h1>
+              <p>
+                Di laman SIBI ini, tersedia buku-buku dari kurikulum 2013
+                (K-13), Kurikulum Merdeka, serta buku umum sebagai referensi
+                adik-adik belajar.
+              </p>
+              <p>
+                Belajar pun jadi lebih semangat dengan video animasi,
+                games/permainan, dan simulasi pada buku elektronik interaktif.
+              </p>
+              <p>
+                Rasakan asiknya belajar melalui buku audio, belajar dengan
+                santai di rumah maupun di perjalanan.
+              </p>
+            </section>
+          </section>
+        </section>
+      </section>
+
+      <section
+        class="bg-pink"
+        style="
+          padding: 60px 0px;
+          background-image: url(https://buku.kemdikbud.go.id/assets/image/guide/Background.png);
+          background-repeat: no-repeat;
+          background-size: 100%;
+        "
+      >
+        <section class="container p-3 text-center">
+          <h1 class="text-blue fw-bold mb-3">Jelajahi buku sekarang</h1>
+          <a href="#" class="btn btn-orange text-white">
+            Buka katalog buku
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-chevron-right"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+              />
+            </svg>
+          </a>
+        </section>
+      </section>
+
+      <section
+        style="
+          background-image: url(https://buku.kemdikbud.go.id/assets/image/background/bg-2-stats.png);
+          background-position: center center;
+        "
+      >
+        <section class="container p-4">
+          <section
+            class="row text-center justify-content-start justify-content-lg-center"
+          >
+          <section class="col-6 col-lg-2">
+            <section class="position-relative">
+              <section class="position-relative" style="z-index: 100">
+                <span class="text-white fs-1 fw-bold">5.139.718</span>
+              </section>
+              <img
+                src="https://buku.kemdikbud.go.id/assets/image/home/line-stats.png"
+                class="position-absolute mx-auto"
+                style="z-index: 1; bottom: 5%; left: 16%; width: 65%"
+                alt=""
+              />
+            </section>
+            <p class="text-white">Kali buku dibaca</p>
+          </section>
+          <section class="col-6 col-lg-2">
+            <section class="position-relative">
+              <section class="position-relative" style="z-index: 100">
+                <span class="text-white fs-1 fw-bold">5.139.718</span>
+              </section>
+              <img
+                src="https://buku.kemdikbud.go.id/assets/image/home/line-stats.png"
+                class="position-absolute mx-auto"
+                style="z-index: 1; bottom: 5%; left: 16%; width: 65%"
+                alt=""
+              />
+            </section>
+            <p class="text-white">Kali buku diunduh</p>
+          </section>
+          <section class="col-6 col-lg-2">
+            <section class="position-relative">
+              <section class="position-relative" style="z-index: 100">
+                <span class="text-white fs-1 fw-bold">5.139.718</span>
+              </section>
+              <img
+                src="https://buku.kemdikbud.go.id/assets/image/home/line-stats.png"
+                class="position-absolute mx-auto"
+                style="z-index: 1; bottom: 5%; left: 16%; width: 65%"
+                alt=""
+              />
+            </section>
+            <p class="text-white">Buku tersedia</p>
+          </section>
+          <section class="col-6 col-lg-2">
+            <section class="position-relative">
+              <section class="position-relative" style="z-index: 100">
+                <span class="text-white fs-1 fw-bold">5.139.718</span>
+              </section>
+              <img
+                src="https://buku.kemdikbud.go.id/assets/image/home/line-stats.png"
+                class="position-absolute mx-auto"
+                style="z-index: 1; bottom: 5%; left: 16%; width: 65%"
+                alt=""
+              />
+            </section>
+            <p class="text-white">Buku lulus penilaian</p>
+          </section>
+          <section class="col-6 col-lg-2">
+            <section class="position-relative">
+              <section class="position-relative" style="z-index: 100">
+                <span class="text-white fs-1 fw-bold">5.139.718</span>
+              </section>
+              <img
+                src="https://buku.kemdikbud.go.id/assets/image/home/line-stats.png"
+                class="position-absolute mx-auto"
+                style="z-index: 1; bottom: 5%; left: 16%; width: 65%"
+                alt=""
+              />
+            </section>
+            <p class="text-white">Total kunjungan</p>
+          </section>
+        </section>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <footer id="footer" style="background-color: #2f3e59">
+      <section class="container">
+        <section class="row justify-content-between my-5">
+          <section class="col-md-4 pe-md-5">
+            <img
+              src="https://buku.kemdikbud.go.id/assets/image/kemendikbud.webp"
+              width="100"
+              alt=""
+            />
+            <p class="text-white my-2">
+              <strong>Pusat Perbukuan</strong>
+            </p>
+            <p>
+              <small class="text-white">
+                Badan Standar, Kurikulum, dan Asesmen Pendidikan. Kementerian
+                Pendidikan, Kebudayaan, Riset, dan Teknologi.
+              </small>
+            </p>
+          </section>
+          <section class="col-md-5 mt-4 mt-md-0">
+            <h5 class="footer-title ms-3">Peta Situs</h5>
+            <ul class="nav flex-column">
+              <section class="row">
+                <section class="col-md-6">
+                  <a href="#" class="nav-link text-white" aria-current="page"
+                    >Beranda</a
+                  >
+                  <a href="#" class="nav-link text-white"
+                    >Buku Teks Kurikulum Merdeka</a
+                  >
+                  <a href="#" class="nav-link text-white">Buku Teks K-13</a>
+                  <a href="#" class="nav-link text-white">Buku Nonteks</a>
+                  <a href="#" class="nav-link text-white">Penilaian</a>
+                </section>
+                <section class="col-md-6">
+                  <a href="#" class="nav-link text-white" rel="noreferrer"
+                    >Kebijakan</a
+                  >
+                  <a href="#" class="nav-link text-white" rel="noreferrer"
+                    >Pembinaan</a
+                  >
+                  <a href="#" class="nav-link text-white" rel="noreferrer"
+                    >Profil</a
+                  >
+                </section>
+              </section>
+            </ul>
+          </section>
+          <section class="col-md-3 mt-4 mt-md-0">
+            <h5 class="footer-title">Kontak Kami</h5>
+            <p class="text-white">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-geo-alt-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"
+                />
+              </svg>
+              Jalan RS. Fatmawati Gd D Komplek Kemendikbudristek Cipete, Jakarta
+              12410
+            </p>
+            <a href="" class="text-white text-decoration-none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-telephone-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"
+                />
+              </svg>
+              021-3804248
+            </a>
+            <a href="" class="text-white text-decoration-none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-envelope-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"
+                />
+              </svg>
+              buku@kemdikbud.go.id
+            </a>
+          </section>
+        </section>
+        <section class="row">
+          <section class="col-11">
+            <p class="text-white">
+              &copy; Copyrights 2022 Sistem Informasi Perbukuan Indonesia. All
+              rights reserved.
+            </p>
+          </section>
+          <section class="col text-end">
+            <a href="#" class="btn btn-warning rounded">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-arrow-up-circle-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"
+                />
+              </svg>
+            </a>
+          </section>
+        </section>
+      </section>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
