@@ -137,6 +137,16 @@ petunjuk
 }
 
 /* 
+Detail
+*/
+
+.hero-detail {
+    border-radius: 10px;
+    width: 80%;
+}
+
+
+/* 
 footer
 */
 
