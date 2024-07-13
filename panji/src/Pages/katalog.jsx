@@ -5,17 +5,15 @@ import axios from "axios";
 
 const Katalog = () => {
   const [dongengs, setDongeng] = useState([]);
+
   useEffect(() => {
-    getDongeng;
+    const fetchDongeng = async () => {
+      const response = await axios.get("http://localhost:5000/api/dongeng");
+      setDongeng(response.data)
+    }
+    fetchDongeng()
   }, []);
 
-  const getDongeng = async () => {
-    const response = await axios.get("http://localhost:5000/api/dongeng");
-    // console.log(response.data);
-    setDongeng(response.data);
-  };
-  getDongeng();
-  // console.log(await axios.get("http://localhost:5000/api/dongeng"))
 
   return (
     <>
