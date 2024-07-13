@@ -34,52 +34,9 @@ const Header = () => {
                   </a>
                 </li>
                 <li className="nav-item dropdown mx-1">
-                  <a
-                    href="/katalog"
-                    className="nav-link dropdown-toggle dropdown-mobile"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
+                  <a href="/katalog" className="nav-link" role="button">
                     Katalog Buku
                   </a>
-                  <ul
-                    className="dropdown-menu px-2"
-                    aria-labelledby="dropdownCatalogue"
-                  >
-                    <li>
-                      <a href="/katalog" className="dropdown-item p-2">
-                        <img
-                          src="https://buku.kemdikbud.go.id/assets/image/home/Group%2079.png"
-                          width={30}
-                          alt=""
-                        />
-                        <span className="ms-2 my-auto">
-                          Buku Teks Kurikulum Merdeka
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/katalog" className="dropdown-item p-2">
-                        <img
-                          src="https://buku.kemdikbud.go.id/assets/image/home/Group%2076.png"
-                          width={30}
-                          alt=""
-                        />
-                        <span className="ms-2 my-auto">Buku Teks K-13</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/katalog" className="dropdown-item p-2">
-                        <img
-                          src="https://buku.kemdikbud.go.id/assets/image/home/Group%2080.png"
-                          width={30}
-                          alt=""
-                        />
-                        <span className="ms-2 my-auto">Buku Nonteks</span>
-                      </a>
-                    </li>
-                  </ul>
                 </li>
                 <li className="nav-item dropdown mx-1">
                   <a
@@ -131,12 +88,6 @@ const Header = () => {
                   <section className="nav-link" style={{ cursor: "pointer" }}>
                     Profil
                   </section>
-                </li>
-                <li className="nav-item mx-1">
-                  <a href="#" className="nav-link">
-                    Sastra Masuk Kurikulum
-                    <sup className="text-bg-danger">Baru</sup>
-                  </a>
                 </li>
               </ul>
               <ul className="navbar-nav mb-2 mb-lg-0 text-center text-xl-start">
