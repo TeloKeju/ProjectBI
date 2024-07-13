@@ -1,7 +1,25 @@
 import Header from "../Components/header";
 import Footer from "../Components/footer";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 const Detail = () => {
+
+
+  const { id } = useParams()
+
+  const [detail, setDetail] = useState([]);
+
+  useEffect(() => {
+    const fetchDetail = async () => {
+      const response = await axios.get(`http://localhost:5000/api/dongeng/${id}`);
+      setDetail(response.data);
+    }
+    fetchDetail()
+  }, []);
+
+  console.log(detail)
   return (
     <>
       <Header></Header>
@@ -27,8 +45,7 @@ const Detail = () => {
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
                   <a href="/" className="text-decoration-none text-blue">
-                    Panduan Guru: Projek Penguatan Profil Pelajar Pancasila
-                    (Edisi Revisi)
+                    {detail.title}
                   </a>
                 </li>
               </ol>
@@ -61,8 +78,8 @@ const Detail = () => {
                   Buku PDF
                 </button>
                 <h3 className="my-3">
-                  Panduan Guru: Projek Penguatan Profil Pelajar Pancasila (Edisi
-                  Revisi)
+                  {detail.title}
+                  {detail.PdfPath}
                 </h3>
                 <button className="btn btn-sm btn-outline-primary py-2 mt-2">
                   <svg
