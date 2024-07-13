@@ -45,39 +45,7 @@ const Home = () => {
                     placeholder="Cari buku disini"
                     aria-label="Cari buku disini"
                   />
-                  <button
-                    className="d-none d-sm-block btn btn-white bg-white border-start border-1 dropdown-toggle px-4"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Kurikulum Merdeka
-                  </button>
-                  <ul className="dropdown-menu">
-                    <li>
-                      <section
-                        className="dropdown-item"
-                        style={{ cursor: "pointer" }}
-                      >
-                        Kurikulum Merdeka
-                      </section>
-                    </li>
-                    <li>
-                      <section
-                        className="dropdown-item"
-                        style={{ cursor: "pointer" }}
-                      >
-                        Teks K-13
-                      </section>
-                    </li>
-                    <li>
-                      <section
-                        className="dropdown-item"
-                        style={{ cursor: "pointer" }}
-                      >
-                        Nonteks
-                      </section>
-                    </li>
-                  </ul>
+
                   <section className="bg-white my-auto" style={{ padding: 9 }}>
                     <button className="btn btn-orange text-white" type="button">
                       Cari
@@ -954,3 +922,4 @@ const Home = () => {
 };
 
 export default Home;
+
