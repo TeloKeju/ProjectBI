@@ -1,4 +1,4 @@
-import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+import "react-pdf/dist/esm/Page/AnnotationLayer.css"
 import { useState } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import { pdfjs, Document, Page } from 'react-pdf';
@@ -19,7 +19,7 @@ function MyApp() {
     function pagesList() {
         var pages = [];
         for (var i = 1; i <= numPages; i++) {
-            pages.push(<Page width={500} key={i} pageNumber={i} />);
+            pages.push(<div key={i}><Page width={500} pageNumber={i} renderAnnotationLayer={false} renderTextLayer={false} /></div>);
         }
         return pages;
     }
@@ -30,11 +30,6 @@ function MyApp() {
             <Document file="http://localhost:5000/pdf/1.pdf" onLoadSuccess={onDocumentLoadSuccess}>
                 <HTMLFlipBook width={500} height={707}>
                     {pagesList()}
-                    {/* <Page width={500} pageNumber={1} /> */}
-                    <div> akoskdoasda</div>
-                    <div> akoskdoasdaamsdkamsdkas</div>
-                    <div> akoskdoasdaamsdkamsdkasasndansd</div>
-                    <div> akoskdoasdaamsdkamsdkasasndansdandasnd</div>
                 </HTMLFlipBook>
             </Document>
         </div>
