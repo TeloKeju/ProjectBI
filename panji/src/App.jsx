@@ -12,6 +12,7 @@ import Katalog from "./Pages/katalog";
 import Petunjuk from "./Pages/petunjuk";
 import Detail from "./Pages/detail";
 import Dongeng from "./Pages/dongeng";
+import Login from "./Pages/login"
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -25,6 +26,7 @@ function App() {
           <Route path="/Petunjuk" element={<Petunjuk />} />
           <Route path="/dongeng/detail/:id" element={<Detail />} />
           <Route path="/dongeng/read" element={<Dongeng />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Router >
     </>

@@ -52,10 +52,9 @@ const loginModel = async (email, password) => {
         },
         password: {
             value: password,
-            error: (!validator.isByteLength(password, { min: 8, max: 16 })) ? "Password harus berisi 8 sampai 16 Karakter" : null,
+            error: null
         },
-        status: ((count != 0) || (!validator.isByteLength(password, { min: 8, max: 16 }))
-        )
+        status: (count === 0)
     }
     // console.log(rows)
 
