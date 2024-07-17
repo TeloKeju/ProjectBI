@@ -14,34 +14,7 @@ const User = db.define("users",
     { freezeTableName: true }
 )
 
-const registerModel = async (nama, email, password, confirmPassword) => {
-    const findEmail = await User.findOne({ where: { email } })
-    return {
-        nama: {
-            value: nama,
-            error: (!validator.isByteLength(nama, { min: 4, max: 16 })) ? "Field Nama minimal berisi 4 - 16 Karakter " : null,
-        },
-        email: {
-            value: email,
-            error: (findEmail) ? "Email sudah terdaftar" : (!validator.isEmail(email)) ? "Email tidak Valid" : null,
-        },
-        password: {
-            value: password,
-            error: (!validator.isByteLength(password, { min: 8, max: 16 })) ? "Password harus berisi 8 sampai 16 Karakter" : null
-        },
-        confirmPassword: {
-            value: confirmPassword,
-            error: (!validator.equals(confirmPassword, password)) ? "Confirm Password tidak sama" : null
-        },
-        status: (
-            (!validator.isByteLength(nama, { min: 4, max: 16 })) ||
-            (!findEmail) ||
-            (!validator.isEmail(email)) ||
-            (!validator.isByteLength(password, { min: 8, max: 16 })) ||
-            (!validator.equals(confirmPassword, password))
-        )
-    }
-};
+
 
 const loginModel = async (email, password) => {
     const { count } = await User.findAndCountAll({ where: { email } })
@@ -52,10 +25,9 @@ const loginModel = async (email, password) => {
         },
         password: {
             value: password,
-            error: (!validator.isByteLength(password, { min: 8, max: 16 })) ? "Password harus berisi 8 sampai 16 Karakter" : null,
+            error: null
         },
-        status: ((count != 0) || (!validator.isByteLength(password, { min: 8, max: 16 }))
-        )
+        status: (count === 0)
     }
     // console.log(rows)
 
@@ -102,7 +74,7 @@ const updateModel = (nama, password) => {
 
 
 export default User;
-export { registerModel, loginModel, createModel, updateModel }
+export { loginModel, createModel, updateModel }
 
 (async () => {
     await db.sync()
