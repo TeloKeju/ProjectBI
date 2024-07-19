@@ -11,8 +11,8 @@ const router = express.Router();
 router.get("/api/users/:id", accessValidation, getUserByID);
 router.get("/api/users", accessValidation, getUser);
 router.post("/api/users", accessValidation, createUser);
-router.patch("/api/users/:id", updateUser);
-router.delete("/api/users/:id", deleteUser);
+router.patch("/api/users/:id", accessValidation, updateUser);
+router.delete("/api/users/:id", accessValidation, deleteUser);
 
 router.post("/api/dongeng", createDongeng);
 router.delete("/api/dongeng/:id", deleteDongeng);

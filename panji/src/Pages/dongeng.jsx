@@ -3,12 +3,9 @@ import { useState } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import { pdfjs, Document, Page } from 'react-pdf';
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-    'pdfjs-dist/build/pdf.worker.min.mjs',
-    import.meta.url,
-).toString();
 
-function MyApp() {
+
+const dongeng = () => {
     const [numPages, setNumPages] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);
 
@@ -35,4 +32,4 @@ function MyApp() {
         </div>
     );
 }
-export default MyApp;
+export default dongeng;
