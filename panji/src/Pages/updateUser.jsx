@@ -1,8 +1,15 @@
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
+import validator from "validator"
 import axios from "axios"
 
 const updateUser = () => {
+
+    useEffect(() => {
+        getUser()
+    }, [])
+
+    const navigate = useNavigate()
     const { id } = useParams()
 
     const [nama, setNama] = useState('')
@@ -17,22 +24,19 @@ const updateUser = () => {
         })
         setNama(result.data.nama)
         setEmail(result.data.email)
+        console.log('p')
     }
-    useEffect(() => {
-        getUser()
-    })
 
     const submit = async (e) => {
         e.preventDefault()
-        try {
-            const result = await axios.patch(`http://localhost:5000/api/users/${id}`, {
-                nama, email
-            },)
-
-        } catch (err) {
-            console.log(err.message)
+        if (!validator.isByteLength(nama, { min: 4 })) {
+            setMsgNama(`Karakter Nama terlalu sedikit!`)
         }
+
+        const result = await axios.patch(`http://localhost:5000/api/users/${id}`, { nama, email }, { headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` } })
+        navigate('/users', { state: { message: 'User Berhasil di Ubah!', status: 'success' } });
     }
+
 
 
 
@@ -43,7 +47,10 @@ const updateUser = () => {
                 <label htmlFor="">
                     nama
                 </label>
-                <input type="text" value={nama} onChange={(e) => { setNama(e.target.value) }} />
+                <input type="text" value={nama} onChange={(e) => {
+                    setNama(e.target.value)
+                    setMsgNama("")
+                }} />
 
                 <label htmlFor="">
                     email

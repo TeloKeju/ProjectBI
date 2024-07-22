@@ -34,47 +34,8 @@ const loginModel = async (email, password) => {
     return credentials
 }
 
-const createModel = async (nama, email, password) => {
-    const findEmail = await User.findOne({ where: { email } })
-    return {
-        nama: {
-            value: nama,
-            error: (!validator.isByteLength(nama, { min: 4, max: 16 })) ? "Field Nama minimal berisi 4 - 16 Karakter " : null,
-        },
-        email: {
-            value: email,
-            error: (findEmail) ? "Email sudah terdaftar" : (!validator.isEmail(email)) ? "Email tidak Valid" : null,
-        },
-        password: {
-            value: password,
-            error: (!validator.isByteLength(password, { min: 8, max: 16 })) ? "Password harus berisi 8 sampai 16 Karakter" : null
-        },
-        status: (
-            (!validator.isByteLength(nama, { min: 4, max: 16 })) ||
-            (!findEmail) ||
-            (!validator.isEmail(email)) ||
-            (!validator.isByteLength(password, { min: 8, max: 16 }))
-        )
-    }
-}
-
-const updateModel = (nama, password) => {
-    return {
-        nama: {
-            value: nama,
-            error: (!validator.isByteLength(nama, { min: 4, max: 16 })) ? "Field Nama minimal berisi 4 - 16 Karakter " : null,
-        },
-        password: {
-            value: password,
-            error: (!validator.isByteLength(password, { min: 8, max: 16 })) ? "Password harus berisi 8 sampai 16 Karakter" : null
-        },
-        status: (validator.isByteLength(nama, { min: 4, max: 16 }) || (validator.isByteLength(password, { min: 8, max: 16 })))
-    }
-}
-
-
 export default User;
-export { loginModel, createModel, updateModel }
+export { loginModel }
 
 (async () => {
     await db.sync()

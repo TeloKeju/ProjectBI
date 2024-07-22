@@ -14,10 +14,10 @@ router.post("/api/users", accessValidation, createUser);
 router.patch("/api/users/:id", accessValidation, updateUser);
 router.delete("/api/users/:id", accessValidation, deleteUser);
 
-router.post("/api/dongeng", createDongeng);
-router.delete("/api/dongeng/:id", deleteDongeng);
+router.post("/api/dongeng", accessValidation, createDongeng);
+router.delete("/api/dongeng/:id", accessValidation, deleteDongeng);
 router.get("/api/dongeng", getDongeng);
-router.patch("/api/dongeng/:id", updateDongeng);
+router.patch("/api/dongeng/:id", accessValidation, updateDongeng);
 router.get("/api/dongeng/:id", getDongengById);
 
 router.post("/api/login", login)

@@ -1,12 +1,19 @@
 import Header from "../Components/header";
 import Footer from "../Components/footer";
 import axios from "axios";
+import Swal from 'sweetalert2'
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 
 const User = () => {
+    const location = useLocation();
     const navigate = useNavigate()
+
+
+    const { message, status } = location.state || {};
+
+
     const [users, setUsers] = useState([])
     const getUser = async () => {
         const result = await axios.get("http://localhost:5000/api/users", {
@@ -16,6 +23,13 @@ const User = () => {
     }
 
     useEffect(() => {
+        if (message) {
+            Swal.fire({
+                title: status,
+                text: message,
+                icon: status
+            });
+        }
         getUser()
     }, [])
 
@@ -26,17 +40,19 @@ const User = () => {
         console.log(result)
         getUser()
     }
-    const updateUser = async (key) => {
-
+    const updateUser = (key) => {
         navigate(`/users/update/${key}`)
-
-        // const result = await axios.patch(`http://localhost:5000/api/users/${key}`)
-
     }
+
+    const addUser = () => {
+        navigate(`/users/add`)
+    }
+
 
     return (
         <>
             <Header></Header>
+            <button onClick={addUser}>Add User</button>
             <table>
                 <thead>
                     <tr>
@@ -57,7 +73,6 @@ const User = () => {
                             <td>{user.createdAt}</td>
                             <td>{user.updatedAt}</td>
                             <td>
-                                {user.id}
                                 <button onClick={() => updateUser(user.id)}>update</button>
                                 <button onClick={() => deleteUser(user.id)}>hapus</button>
                             </td>

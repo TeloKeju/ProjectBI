@@ -1,5 +1,4 @@
 import User from '../Models/UserModel.js';
-import { createModel, updateModel } from '../Models/UserModel.js';
 import bcrypt from "bcrypt"
 
 export const getUser = async (req, res) => {
@@ -20,17 +19,18 @@ export const getUserByID = async (req, res) => {
         })
         res.status(200).json(response)
     } catch (error) {
-        console.log(error.message)
+        res.status(500).json({ msg: error.message })
     }
 }
 
 export const createUser = async (req, res) => {
-    const { nama, email, password } = req.body
-    const result = await createModel(nama, email, password)
-    if (result.status === false) {
-        return res.status(401).json(result)
-    }
     try {
+        const { nama, email, password } = req.body
+        const uniqueEmail = await User.findOne({ where: { email } })
+
+        if (uniqueEmail) {
+            return res.status(400).json({ email: "Email sudah di gunakan!" })
+        }
 
         const salt = await bcrypt.genSalt();
         const hashPassword = await bcrypt.hash(password, salt)
@@ -39,35 +39,21 @@ export const createUser = async (req, res) => {
             email,
             password: hashPassword
         })
-        res.status(201).json({ msg: "user berhasil di buat!" })
-    } catch (error) {
-        console.log(error)
+        return res.status(200).json({ message: "User berhasil dibuat!" })
+    } catch (err) {
+        return res.status(500).json({ message: err.message })
     }
+
 }
 
 export const updateUser = async (req, res) => {
-    try {
-        const { nama, password } = req.body
-        const result = await updateModel(nama, password)
-        if (result.status === true) {
-            const salt = await bcrypt.genSalt();
-            const hashPassword = await bcrypt.hash(password, salt)
-            await User.update({
-                nama,
-                password: hashPassword,
-            },
-                {
-                    where: {
-                        id: req.params.id
-                    }
-                })
-            res.status(200).json({ msg: "User Berhasil di Update!" })
-        } else {
-            res.status(200).json(result)
-        }
 
-    } catch (error) {
-        console.log(error);
+    try {
+        const { nama, email } = req.body
+        const result = await User.update({ nama }, { where: { id: req.params.id } })
+        res.status(200).json({ message: "User Berhasil di update" })
+    } catch (e) {
+        res.status(500).json({ msg: error.message })
     }
 }
 
@@ -83,4 +69,5 @@ export const deleteUser = async (req, res) => {
     } catch (error) {
         console.log(error);
     }
+
 }
