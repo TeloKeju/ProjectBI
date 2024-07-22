@@ -103,6 +103,7 @@ const Footer = () => {
                 </svg>
                 021-3804248
               </a>
+              <br />
               <a href="" className="text-white text-decoration-none">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

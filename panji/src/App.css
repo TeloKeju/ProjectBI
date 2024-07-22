@@ -145,6 +145,18 @@ Detail
     width: 80%;
 }
 
+/* 
+Login
+*/
+
+.login {
+    background: url(https://buku.kemdikbud.go.id/static/media/background.3fb5f6000e35b298ef5c.png);
+    width: 101%;
+    background-color: #e5f8ff!important;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    padding-bottom: 80px!important;
+}
 
 /* 
 footer
