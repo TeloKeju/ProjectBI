@@ -1,35 +1,68 @@
-import "react-pdf/dist/esm/Page/AnnotationLayer.css"
-import { useState } from 'react';
-import HTMLFlipBook from 'react-pageflip';
-import { pdfjs, Document, Page } from 'react-pdf';
-
-
+import Header from "../Components/header";
+import Footer from "../Components/footer";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const dongeng = () => {
-    const [numPages, setNumPages] = useState(null);
-    const [pageNumber, setPageNumber] = useState(1);
+    const navigate = useNavigate()
+    const [dongengs, setDongeng] = useState([])
 
-    function onDocumentLoadSuccess({ numPages }) {
-        setNumPages(numPages);
+    const getDongeng = async () => {
+
+        const result = await axios.get("http://localhost:5000/api/dongeng")
+        setDongeng(result.data)
     }
 
-    function pagesList() {
-        var pages = [];
-        for (var i = 1; i <= numPages; i++) {
-            pages.push(<div key={i}><Page width={500} pageNumber={i} renderAnnotationLayer={false} renderTextLayer={false} /></div>);
-        }
-        return pages;
-    }
-    console.log(pagesList())
+    const deleteDongeng = async (id) => {
+        const result = await axios.delete(`http://localhost:5000/api/dongeng/${id}`, {
+            headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }
+        })
+        console.log(result)
 
+    }
+
+    const updateDongeng = async (key) => {
+        navigate(`/dongeng/update/${key}`)
+    }
+
+    useEffect(() => {
+        getDongeng()
+    }, [])
     return (
-        <div>
-            <Document file="http://localhost:5000/pdf/1.pdf" onLoadSuccess={onDocumentLoadSuccess}>
-                <HTMLFlipBook width={500} height={707}>
-                    {pagesList()}
-                </HTMLFlipBook>
-            </Document>
-        </div>
-    );
+        <>
+            <Header></Header>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Title</th>
+                        <th>Cover</th>
+                        <th>aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {dongengs.map((dongeng, index) => (
+                        <tr key={dongeng.id}>
+                            <td>{index + 1}</td>
+                            <td>{dongeng.title}</td>
+                            <td>Cover</td>
+                            <td>
+                                {/* () => deleteUser(user.id) */}
+                                <button onClick={() => deleteDongeng(dongeng.id)}>Delete</button>|
+                                <button onClick={() => updateDongeng(dongeng.id)}>Update</button>|
+                                <button>Preview</button>|
+                            </td>
+                        </tr>
+                    ))}
+
+                </tbody>
+            </table>
+
+            <Footer></Footer>
+        </>
+
+    )
 }
+
 export default dongeng;
