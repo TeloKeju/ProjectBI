@@ -1,5 +1,5 @@
-import Header from "../Components/header";
-import Footer from "../Components/footer";
+import Header from "../template/header";
+import Footer from "../template/footer";
 import { useState } from "react";
 import axios from "axios";
 import validator from "validator";

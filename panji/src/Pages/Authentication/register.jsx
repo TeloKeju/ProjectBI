@@ -1,5 +1,4 @@
-import Header from "../Components/header";
-import Footer from "../Components/footer";
+import Template from "../template/template";
 import { useState, useEffect } from "react";
 import validator from 'validator';
 import axios from "axios";
@@ -46,34 +45,37 @@ const register = () => {
     }
 
     return (
-        <>
-            <Header></Header>
-            <label htmlFor="">{namaMessage}</label>
-            <input type="text" value={nama} onChange={(e) => {
-                setNama(e.target.value)
-                setNamaMessage("")
-            }} />
+        <Template content={(
+            <>
+                <label htmlFor="">{namaMessage}</label>
+                <input type="text" value={nama} onChange={(e) => {
+                    setNama(e.target.value)
+                    setNamaMessage("")
+                }} />
 
-            <label htmlFor="">{emailMessage}</label>
-            <input type="email" value={email} onChange={(e) => {
-                setEmail(e.target.value)
-                setEmailMessage("")
-            }} />
+                <label htmlFor="">{emailMessage}</label>
+                <input type="email" value={email} onChange={(e) => {
+                    setEmail(e.target.value)
+                    setEmailMessage("")
+                }} />
 
-            <label htmlFor="">{passwordMessage}</label>
-            <input type="password" value={password} onChange={(e) => {
-                setPassword(e.target.value)
-                setPasswordMessage('')
-            }} />
+                <label htmlFor="">{passwordMessage}</label>
+                <input type="password" value={password} onChange={(e) => {
+                    setPassword(e.target.value)
+                    setPasswordMessage('')
+                }} />
 
-            <label htmlFor="">{confirmPasswordMessage}</label>
-            <input type="password" value={confirmPassword} onChange={(e) => {
-                setConfirmPassword(e.target.value)
-                setConfirmPasswordMessage("")
-            }} />
-            <button type="submit" onClick={submit}>Daftar</button>
-            <Footer></Footer>
-        </>)
+                <label htmlFor="">{confirmPasswordMessage}</label>
+                <input type="password" value={confirmPassword} onChange={(e) => {
+                    setConfirmPassword(e.target.value)
+                    setConfirmPasswordMessage("")
+                }} />
+                <button type="submit" onClick={submit}>Daftar</button>
+                <Footer></Footer>
+            </>
+        )}>
+        </Template>
+    )
 
 }
 

@@ -2,6 +2,7 @@ import "react-pdf/dist/esm/Page/AnnotationLayer.css"
 import { useState } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import { pdfjs, Document, Page } from 'react-pdf';
+import Template from "../template/template";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
     'pdfjs-dist/build/pdf.worker.min.mjs',
@@ -27,13 +28,19 @@ const dongeng = () => {
     console.log(pagesList())
 
     return (
-        <div>
-            <Document file="http://localhost:5000/pdf/1.pdf" onLoadSuccess={onDocumentLoadSuccess}>
-                <HTMLFlipBook width={500} height={707}>
-                    {pagesList()}
-                </HTMLFlipBook>
-            </Document>
-        </div>
+        <>
+            <Template content={(<div>
+                <Document file="http://localhost:5000/pdf/1.pdf" onLoadSuccess={onDocumentLoadSuccess}>
+                    <HTMLFlipBook width={500} height={707}>
+                        {pagesList()}
+                    </HTMLFlipBook>
+                </Document>
+            </div>)}>
+
+            </Template>
+        </>
+
+
     );
 }
 export default dongeng;

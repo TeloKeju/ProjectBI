@@ -1,10 +1,8 @@
-import Header from "../Components/header";
-import Footer from "../Components/footer";
+import Template from "../template/template";
 const Petunjuk = () => {
   return (
     <>
-      <Header></Header>
-      <main>
+      <Template content={(<main>
         <section className="bg-hero position-relative hero-petunjuk">
           <section className="container p-3 pb-0">
             <section className="row">
@@ -284,9 +282,10 @@ const Petunjuk = () => {
             </section>
           </section>
         </section>
-      </main>
+      </main>)}></Template>
 
-      <Footer></Footer>
+
+
     </>
   );
 };
